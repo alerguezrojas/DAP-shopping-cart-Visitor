@@ -16,7 +16,7 @@ public class Main {
         // 3. Iterar y visitar
         for (Item item : carrito) {
             // Aquí ocurre la magia. No necesitamos saber si es Fruta o Libro.
-            // El método accept se encarga de dirigirlo.
+            // El metodo accept se encarga de dirigirlo.
             total += item.accept(taxCalculator);
         }
 

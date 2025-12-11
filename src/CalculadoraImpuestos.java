@@ -4,6 +4,7 @@ class CalculadoraImpuestos implements Visitor {
     @Override
     public double visit(Libro libro) {
         System.out.println("Calculando impuesto para libro (exento)...");
+        System.out.println("Precio con impuesto: " + libro.getPrecio());
         return libro.getPrecio();
     }
 
@@ -12,6 +13,7 @@ class CalculadoraImpuestos implements Visitor {
     public double visit(Fruta fruta) {
         System.out.println("Calculando impuesto para " + fruta.getClass().getSimpleName() + "...");
         double costo = fruta.getPrecioPorKilo() * fruta.getPeso();
+        System.out.println("Precio con impuesto: " + (costo * 1.10));
         return costo * 1.10; // Añadimos 10%
     }
 }

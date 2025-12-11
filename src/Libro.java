@@ -1,6 +1,6 @@
 class Libro implements Item {
     private double precio;
-    private String isbn;
+    private String isbn; // isbn: International Standard Book Number
 
     public Libro(double precio, String isbn) {
         this.precio = precio;
