@@ -1,0 +1,43 @@
+@startuml
+class CalculadoraImpuestos {
++ double visit(Libro)
++ double visit(Fruta)
+}
+
+interface Item {
+~ double accept(Visitor)
+}
+
+class Libro {
+- double precio
+- String isbn
++ double getPrecio()
++ double accept(Visitor)
+}
+
+
+class Main {
++ {static} void main(String[])
+}
+
+interface Visitor {
+~ double visit(Libro)
+~ double visit(Fruta)
+}
+
+class Fruta {
+- double precioPorKilo
+- double peso
+- String nombre
++ double getPrecioPorKilo()
++ double getPeso()
++ double accept(Visitor)
+}
+
+
+
+
+Visitor <|.. CalculadoraImpuestos
+Item <|.. Libro
+Item <|.. Fruta
+@enduml
